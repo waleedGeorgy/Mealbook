@@ -1,0 +1,43 @@
+.picker input {
+  display: none;
+}
+.controls {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.picker .button {
+  border: 0;
+  padding: 0.5rem 1rem;
+  background: var(--accent-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font: inherit;
+  transition: all 0.25s ease-in-out;
+  font-weight: bold;
+  color: var(--main-dark);
+}
+.imgName {
+  margin: 0.5rem auto;
+  color: var(--orange-light);
+  font-weight: bold;
+  max-width: 20rem;
+}
+.imagePreview {
+  width: 9rem;
+  height: 9rem;
+  border: 1px solid var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #a4abb9;
+  position: relative;
+}
+.imagePreview p {
+  margin: 0;
+  padding: 1rem;
+}
+.imagePreview img {
+  object-fit: cover;
+}

@@ -1,0 +1,49 @@
+.header {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header h2 {
+  text-align: center;
+  color: var(--accent-color);
+  font-size: 2.25rem;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;;
+}
+.header a {
+  background: linear-gradient(90deg, var(--orange-light), var(--orange-dark));
+  padding: 0.5rem 1rem;
+  color: var(--main-dark);
+  font-weight: bold;
+  font-size: 1.33rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  text-align: center;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+.header a:hover {
+  background: linear-gradient(135deg, #ffb36c, var(--orange-dark));
+  box-shadow: 0 0 0.5rem var(--orange-light);
+}
+.loadingText {
+  text-align: center;
+  width: fit-content;
+  font-size: 1.5rem;
+  margin: 3rem auto;
+  animation: loading 2s linear infinite;
+}
+@keyframes loading {
+  0% {
+    color: var(--accent-color);
+  }
+  33% {
+    color: var(--orange-light);
+  }
+  66% {
+    color: var(--orange-dark);
+  }
+  100% {
+    color: var(--accent-color);
+  }
+}

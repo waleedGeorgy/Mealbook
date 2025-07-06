@@ -1,95 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+import classes from "./page.module.css";
+import ImageSlideshow from "@/components/slideshow/ImageSlideshow";
+import Footer from "@/components/footer/Footer";
 
+/*
+NextJS uses SSR and USR in conjunction. It compiles and renders the app on the server, and sends it to the
+client browser. Then on the client side it allows to update the interface using USR, which eliminates the need to
+rerender and resend the entire app from the server, and keeps the app as a SPA. This helps with:
+1- Faster navigation between pages, since the entire app is already pre-rendered on the server.
+2- Improving SEO, since all the data related to the website is on a server that can be crawled by web crawlers.
+===========================
+Each route (folder) in a NextJS app should have a `page.js` file, which is a reserved name that helps Next distinguish
+said files as pages to be rendered.
+*/
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <main className={classes.homePage}>
+      <div className={classes.header}>
+        <div className={classes.slideshow}>
+          <ImageSlideshow />
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className={classes.homePageTextArea}>
+          <div className={classes.hero}>
+            <h1>Write Down Your Favorite Recipes In Mealbook</h1>
+            <p>Share your best meals for the world to see.</p>
+          </div>
+          <div className={classes.cta}>
+            {/* In order to navigate to other pages, we use the <Link> tag provided by Next.
+            It allows a USR of components and pages, unlike, for example, the <a> tag.
+            This way the website is not rerendered on the the server and resent to the client,
+            and just like in React, only the needed parts of the interface are updated */}
+            <Link href="/community">Join the Community</Link>
+            <Link href="/meals">Explore Meals</Link>
+          </div>
+        </div>
+      </div>
+      <div className={classes.textSectionsDiv}>
+        <section className={classes.section}>
+          <h2>Why Mealbook?</h2>
+          <p>
+            Mealbook is a place to discover new dishes, connect with other food
+            lovers, and tell everyone what you like!
+          </p>
+        </section>
+        <section className={classes.section}>
+          <h2>How does it work?</h2>
+          <p>
+            Mealbook is a platform to share your favorite recipes with the
+            world. You publish meals you&apos;ve cooked or tried, and the
+            community gets to rate them, and react to them.
+          </p>
+        </section>
+      </div>
+      <Footer />
+    </main>
   );
 }

@@ -1,42 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap");
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --main-dark: #282c34;
+  --orange-dark: #ff6f3c;
+  --orange-light: #ff9a3c;
+  --accent-color: rgb(232, 232, 232);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-a {
-  color: inherit;
   text-decoration: none;
+  list-style: none;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+html {
+  font-family: "Quicksand", sans-serif;
+}
+body {
+  background: radial-gradient(var(--main-dark), var(--main-dark));
+}
+.notFoundPage,
+.errorPage {
+  margin-top: 5rem;
+  text-align: center;
+}
+.notFoundPage h1,
+.errorPage h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--orange-light), var(--orange-dark));
+  background-clip: text;
+  color: transparent;
+}
+.errorPage span,
+.notFoundPage span {
+  color: var(--orange-dark);
+}
+.notFoundPage p,
+.errorPage p {
+  font-size: 1.33rem;
+  color: var(--accent-color);
 }

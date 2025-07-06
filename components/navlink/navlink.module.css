@@ -1,0 +1,12 @@
+.navlink a {
+  color: var(--main-dark);
+  font-size: 1.33rem;
+  font-weight: bold;
+  transition: color 0.25s ease-in-out;
+  padding: 0.5rem 1rem;
+}
+.navlink .active {
+  background-color: var(--main-dark);
+  border-radius: 0.75rem;
+  color: var(--orange-light);
+}

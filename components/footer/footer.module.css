@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 3rem 1rem 1rem 1rem;
+  color: var(--accent-color);
+}
+.footer a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.5;
+  transition: all 0.25s ease-in-out;
+}
+.footer a:hover {
+  opacity: 1;
+}
+.footer a p {
+  color: var(--accent-color);
+}
+.footer > p {
+  opacity: 0.5;
+}
+.footer img {
+  width: 1.5rem;
+  height: auto;
+}

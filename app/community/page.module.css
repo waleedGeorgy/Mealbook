@@ -1,0 +1,55 @@
+.header {
+  gap: 3rem;
+  margin: 4rem auto 5rem auto;
+  padding: 0 2rem;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.header h1 {
+  font-family: "Montserrat", sans-serif;
+}
+.highlight {
+  background: linear-gradient(90deg, var(--orange-light), var(--orange-dark));
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+}
+.main {
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+.main h2 {
+  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--orange-light);
+}
+.perks {
+  margin: 3rem 0 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  column-gap: 3rem;
+  row-gap: 1rem;
+}
+.perks li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.perks img {
+  width: 8rem;
+  height: auto;
+  object-fit: contain;
+}
+.perks p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  color: whitesmoke;
+}
